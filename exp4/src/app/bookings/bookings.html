@@ -1,0 +1,30 @@
+<div class="background"></div>
+<div class="booking-container">
+<h2>Book Your Trip</h2>
+<form (ngSubmit)="submitBooking()" #bookingForm="ngForm">
+<div class="form-row">
+<label for="name">Name:</label>
+<input id="name" name="name" type="text" [(ngModel)]="name" required />
+</div>
+<div class="form-row">
+<label for="persons">No. of Persons:</label>
+<input id="persons" name="persons" type="number" [(ngModel)]="persons"
+required />
+</div>
+<div class="form-row">
+<label for="destination">Choose Destination:</label>
+<select id="destination" name="destination" [(ngModel)]="destination" required>
+<option value="Paris">Paris</option>
+<option value="Tokyo">Tokyo</option>
+<option value="New York">New York</option>
+<option value="Dubai">Dubai</option>
+</select>
+</div>
+<button type="submit">Submit</button>
+</form>
+<div *ngIf="bookingConfirmed" class="confirmation">
+<p>Thank you, <strong>{{ name }}</strong>!</p>
+<p>Your trip to <strong>{{ destination }}</strong> has been booked for
+<strong>{{ persons }}</strong> person(s).</p>
+</div>
+</div>

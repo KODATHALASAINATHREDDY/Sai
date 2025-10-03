@@ -1,0 +1,103 @@
+.background {
+background-image: url('/assets/book.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+position: fixed;
+top: 0;
+left: 0;
+height: 100vh;
+width: 100vw;
+z-index: 0;
+opacity: 1;
+}
+body, html {
+margin: 0;
+padding: 0;
+height: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #f0fff1;
+font-family: Arial, sans-serif;
+}
+.booking-container {
+text-align: center;
+z-index: 1;
+position: relative;
+}
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+padding: 30px 40px;
+border-radius: 5px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.form-row {
+display: flex;
+align-items: center;
+gap: 10px;
+width: 50%;
+justify-content: center;
+}
+label {
+width: 150px;
+text-align: right;
+font-weight: bold;
+}
+input, select {
+padding: 8px;
+font-size: 1rem;
+border: 1px solid #ccc;
+border-radius: 6px;
+width: 150px;
+}
+select:focus {
+outline: none;
+border-color: teal;
+box-shadow: 0 0 5px rgba(0, 128, 128, 0.5);
+}
+button {
+padding: 10px 25px;
+font-size: 1rem;
+background-color: teal;
+color: white;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+}
+button:hover {
+background-color: darkcyan;
+}
+h2 {
+color: red;
+}
+.confirmation {
+margin-top: 20px;
+background-color: #e0f7fa;
+padding: 20px;
+border-radius: 10px;
+max-width: 400px;
+margin-left: auto;
+margin-right: auto;
+font-size: 1.1rem;
+}
+@media (max-width: 600px) {
+.form-row {
+flex-direction: column;
+align-items: flex-start;
+}
+label {
+width: 100%;
+text-align: left;
+}
+input, select {
+width: 100%;
+}
+form {
+padding: 20px;
+}
+}

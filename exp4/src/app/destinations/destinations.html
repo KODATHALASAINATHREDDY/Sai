@@ -1,0 +1,17 @@
+<div class="background"></div>
+<h2>Top Travel Destinations</h2>
+<div class="button-list">
+<button (click)="selectDestination('Paris')"> Paris</button>
+<button (click)="selectDestination('Tokyo')"> Tokyo</button>
+<button (click)="selectDestination('New York')"> New York</button>
+<button (click)="selectDestination('Dubai')"> Dubai</button>
+</div>
+<div class="image-container" *ngIf="selected">
+<img [src]="'assets/' + selected.toLowerCase().replace(' ', '') + '.png'"
+[alt]="selected + ' image'" />
+<ul>
+<li *ngFor="let place of destinations[selected]">
+{{ place }}
+</li>
+</ul>
+</div>
