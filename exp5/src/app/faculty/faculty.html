@@ -1,0 +1,53 @@
+<h2>GPREC FACULTY DIRECTORY</h2>
+
+<!-- Filters -->
+<div style="margin-bottom: 15px;">
+  <label>
+    Department:
+    <select [(ngModel)]="selectedDept">
+      <option value="">All</option>
+      <option value="CSE">CSE</option>
+      <option value="ECS">ECS</option>
+      <!-- Add more departments as needed -->
+    </select>
+  </label>
+
+  <label style="margin-left: 20px;">
+    Gender:
+    <select [(ngModel)]="selectedGender">
+      <option value="">All</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </label>
+</div>
+
+<!-- Faculty Table -->
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Email</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let faculty of filteredFaculty">
+      <td>
+        <img 
+          [src]="faculty.photo" 
+          alt="{{ faculty.name }}" 
+          width="60" 
+          height="60" 
+          style="border-radius: 50%;" 
+        />
+      </td>
+      <td>{{ faculty.name }}</td>
+      <td>{{ faculty.dept }}</td>
+      <td>{{ faculty.email }}</td>
+      <td>{{ faculty.gender }}</td>
+    </tr>
+  </tbody>
+</table>
