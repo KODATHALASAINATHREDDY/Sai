@@ -1,4 +1,3 @@
-app.ts 
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -26,42 +25,3 @@ export class App {
  (this.selectedGen ? f.gender === this.selectedGen : true) );
  }
 }
-app.html
-<h2>GPREC FACULTY DIRECTORY</h2>
-
-<div style="margin-bottom: 15px">
-  <label>
-    Department:
-    <select [(ngModel)]="selectedDep">
-      <option value="">All</option>
-      <option value="CSE">CSE</option>
-      <option value="ECS">ECS</option>
-    </select>
-  </label>
-
-  <label style="margin-left: 20px">
-    Gender:
-    <select [(ngModel)]="selectedGen">
-      <option value="">All</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
-  </label>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Department</th>
-      <th>Gender</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let f of filteredFaculty">
-      <td>{{ f.name }}</td>
-      <td>{{ f.dep }}</td>
-      <td>{{ f.gender }}</td>
-    </tr>
-  </tbody>
-</table>
